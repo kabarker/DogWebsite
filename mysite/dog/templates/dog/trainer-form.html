@@ -1,0 +1,27 @@
+{% extends 'dog/base.html' %}
+
+{% block body %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="row form ">
+        <div class="fieldWrapper">
+            {{ form.portfolio_name.errors }}
+            <label for="{{ form.trainer_name.id_for_label }}">Trainer Name:</label>
+            {{ form.trainer_name }}
+        </div>
+        <div class="fieldWrapper fieldWrapperbox">
+            {{ form.trainer_description.errors }}
+            <label for="{{ form.trainer_description.id_for_label }}">Trainer Description:</label>
+            {{ form.trainer_description }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.trainer_image.errors }}
+            <label for="{{ form.trainer_image.id_for_label }}">Trainer Image:</label>
+            {{ form.trainer_image }}
+        </div>
+        <button type="submit" class="btn btn-success formbtn" >Save</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

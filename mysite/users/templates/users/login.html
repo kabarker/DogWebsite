@@ -1,0 +1,27 @@
+{% extends 'dog/base.html' %}
+
+{% block body %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+            <div class="row login">
+                <div class="fieldWrapper">
+                    {{ form.username.errors }}
+                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                    {{ form.username }}
+                </div>
+                <div class="fieldWrapper">
+                    {{ form.password.errors }}
+                    <label for="{{ form.password.id_for_label }}">Password:</label>
+                    {{ form.password }}
+                </div>
+                <div>
+                     <button type="submit" class="btn btn-primary" >Login</button>
+                </div>
+            </div>
+
+        
+    </form>
+
+{% endblock %}

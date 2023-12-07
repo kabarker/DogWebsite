@@ -1,0 +1,53 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agility Classes</title>
+</head>
+<body>
+    {% block body %}
+    {% if user.is_authenticated %}
+    <div>
+        <a href="{% url 'dog:create_agilityclasses'%}" class="btn btn-primary add">Add Class</a>
+    </div>
+    
+{% else %}
+<div>
+    <a href="https://versadog.dogbizpro.com/Public/Registration/Index.aspx" class="btn btn-success success">Register for a Class Today</a>
+</div>
+    {% endif %}
+        <div class="row">   
+           {% for classes in agilityclass_list %}           
+               <div class="column">                  
+                 <div class="card">
+                           <img class="card" height="200px"  src="{{ classes.agilityclass_image }}"/>
+                        <div >
+                           <h2>{{classes.agilityclass_name}}</h2>
+                       </div>
+                       <div> 
+                            <h5>Price: ${{classes.agilityclass_price}}</h5>
+                        </div>
+                        <div> 
+                            <h5>Length: {{classes.agilityclass_length}}</h5>
+                        </div>
+                       <div >
+                           <p>{{classes.agilityclass_description}}</p>
+                       </div> 
+                       {% if user.is_authenticated %}
+                       <div >
+                           <a href="{% url 'dog:delete_agilityclasses' classes.id %}" class="btn btn-danger">Delete</a>
+                           
+                           <a href= "{% url 'dog:update_agilityclasses' classes.id %}" class="btn btn-success">Edit</a>
+                           <a href="{% url 'dog:agility_detail' classes.id %}"  class="btn btn-info">Details</a>
+                       </div>  
+                       {% endif %}                   
+                   </div>       
+               </div>  
+           {% endfor %}
+        </div>  
+{% endblock %}
+</body>
+</html>

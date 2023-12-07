@@ -1,0 +1,68 @@
+{% extends 'dog/base.html' %}
+
+{% block body %}
+<form method="POST">
+    <h1> Agility Class</h1>
+    {% csrf_token %}
+    <div class="row form">
+        <div class="fieldWrapper">
+            {{ form.agilityclass_name.errors }}
+            <label for="{{ form.agilityclass_name.id_for_label }}">Class Name:</label>
+            {{ form.agilityclass_name }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_description.errors }}
+            <label for="{{ form.agilityclass_description.id_for_label }}">Class Description:</label>
+            {{ form.agilityclass_description }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_image.errors }}
+            <label for="{{ form.agilityclass_image.id_for_label }}">Class Image:</label>
+            {{ form.agilityclass_image }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_price.errors }}
+            <label for="{{ form.agilityclass_price.id_for_label }}">Class Price:</label>
+            {{ form.agilityclass_price }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_length.errors }}
+            <label for="{{ form.agilityclass_length.id_for_label }}">Class Length:</label>
+            {{ form.agilityclass_length }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week1.errors }}
+            <label for="{{ form.agilityclass_week1.id_for_label }}">Class Week 1 Curriculum:</label>
+            {{ form.agilityclass_week1 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week2.errors }}
+            <label for="{{ form.agilityclass_week2.id_for_label }}">Class Week 2 Curriculum:</label>
+            {{ form.agilityclass_week2 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week3.errors }}
+            <label for="{{ form.agilityclass_week3.id_for_label }}">Class Week 3 Curriculum:</label>
+            {{ form.agilityclass_week3 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week4.errors }}
+            <label for="{{ form.agilityclass_week4.id_for_label }}">Class Week 4 Curriculum:</label>
+            {{ form.agilityclass_week4 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week5.errors }}
+            <label for="{{ form.agilityclass_week5.id_for_label }}">Class Week 5 Curriculum:</label>
+            {{ form.agilityclass_week5 }}
+        </div>
+        <div class="fieldWrapper">
+            {{ form.agilityclass_week6.errors }}
+            <label for="{{ form.agilityclass_week6.id_for_label }}">Class Week 6 Curriculum:</label>
+            {{ form.agilityclass_week6 }}
+        </div>
+        <button type="submit" class="btn btn-success formbtn" >Save</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

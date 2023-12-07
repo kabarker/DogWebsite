@@ -1,0 +1,60 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agility Class</title>
+</head>
+<body>
+    {% block body %}
+
+        <div class="details">   
+                        <div >
+                           <h2>{{agility.agilityclass_name}}</h2>
+                       </div>                
+                       <div >
+                           <h4>Week 1</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week1}}</p>
+                       </div>               
+                       <div >
+                           <h4>Week 2</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week2}}</p>
+                       </div>               
+                       <div >
+                           <h4>Week 3</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week3}}</p>
+                       </div>               
+                       <div >
+                           <h4>Week 4</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week4}}</p>
+                       </div>               
+                       <div >
+                           <h4>Week 5</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week5}}</p>
+                       </div>               
+                       <div >
+                           <h4>Week 6</h4>
+                       </div>               
+                       <div >
+                           <p>{{agility.agilityclass_week6}}</p>
+                       </div>
+
+                       <div >
+                           <a href= "#" class="btn btn-success">Download</a>
+                       </div>  
+        </div>  
+{% endblock %}
+</body>
+</html>

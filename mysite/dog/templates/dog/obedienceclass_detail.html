@@ -1,0 +1,30 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obedience Classes</title>
+</head>
+<body>
+    {% block body %}
+                 
+             <div class="details">
+                    <div >
+                       <h2>{{classes.nonagilityclass_name}}</h2>
+                   </div>                 
+                   <div >
+                       <h4>Curriculum</h4>
+                   </div>               
+                   <div >
+                       <p>{{classes.nonagilityclass_week1}}</p>
+                   </div>
+
+                   <div >
+                       <a href="#" class="btn btn-danger">Download</a>
+                   </div>                
+               </div> 
+{% endblock %}
+</body>
+</html>

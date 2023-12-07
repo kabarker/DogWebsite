@@ -1,0 +1,36 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+<body>
+    {% block body %}
+
+
+    <div class="row">   
+       {% for contact in contacts_list %}           
+           <div class="column">                  
+             <div class="card">
+                    <div >
+                       <h2>Name: {{contact.contact_name}}</h2>
+                   </div>
+                   <div> 
+                        <h5>Email: ${{contact.contact_email}}</h5>
+                    </div>
+                   <div >
+                       <p>{{contact.contact_message}}</p>
+                   </div> 
+                   <div >
+                       <a href="{% url 'dog:delete_contact' contact.id %}" class="btn btn-danger">Delete</a>
+                   </div>                  
+               </div>       
+           </div>  
+       {% endfor %}
+    </div>  
+{% endblock %}
+</body>
+</html>

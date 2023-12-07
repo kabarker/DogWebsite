@@ -1,0 +1,40 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainers</title>
+</head>
+<body>  
+    {% block body %} 
+    {% if user.is_authenticated %}
+    <div>
+         <a href="{% url 'dog:create_trainer'%}" class="btn btn-primary add">Add Trainer</a>
+     </div>
+     {% endif %}
+         <div class="row">   
+            {% for trainers in trainers_list %}           
+                <div class="column">                  
+                  <div class="card">
+                            <img class="card" height="250px"  src="{{ trainers.trainer_image }}"/>
+                         <div >
+                            <h3>{{trainers.trainer_name}}</h3>
+                        </div>
+                        <div >
+                            <p>{{trainers.trainer_description}}</p>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div >
+                            <a href="{% url 'dog:delete_trainer' trainers.id %}" class="btn btn-danger">Delete</a>
+                            <a href= "{% url 'dog:update_trainer' trainers.id %}" class="btn btn-success">Edit</a>
+                        </div>    
+                        {% endif %}                  
+                    </div>       
+                </div>  
+            {% endfor %}
+         </div>  
+{% endblock %}
+</body>
+</html>

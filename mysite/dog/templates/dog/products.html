@@ -1,0 +1,43 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+   {% block body %} 
+   {% if user.is_authenticated %}
+<div>
+     <a href="{% url 'dog:create_product'%}" class="btn btn-primary add">Add Product</a>
+ </div>
+ {% endif %}
+     <div class="row ">   
+        {% for products in products_list %}         
+            <div class="column product">                  
+              <div class="card ">
+                <img class="card" height="250px"  src="{{ products.product_image }}"/>
+                <div >
+                        <h3>{{products.product_name}}</h3>
+                    </div>
+                    <div >
+                        <h5>Price: {{products.product_price}}</h5>
+                    </div>
+                    <div >
+                        <p>{{products.product_description}}</p>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div >
+                        <a href="{% url 'dog:delete_product' products.id %}" class="btn btn-danger">Delete</a>
+                        <a href= "{% url 'dog:update_product' products.id %}" class="btn btn-success">Edit</a>
+                    </div>   
+                    {% endif %}                   
+                </div>       
+            </div>  
+        {% endfor %}
+     </div>  
+{% endblock %}
+</body>
+</html>

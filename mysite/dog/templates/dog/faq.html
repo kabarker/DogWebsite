@@ -1,0 +1,35 @@
+{% extends 'dog/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+</head>
+<body>
+{% block body %} 
+<h1>Frequently Asked Questions</h1>
+<div class="faq">
+  <h4>How old does my dog have to be to start a class?</h4>
+    <p class="answer">As long as they have all of their shots then they are good to start. 
+        We do have some classes that are geared towards puppies so if you have an older dog, 
+        make sure you don't sign up for those.</p>
+
+    <h4>What if my dog doesn't know anything?</h4>
+    <p class="answer">That's what classes our for!
+         You're in the right place, our obedience classes don't require your dog know anything but our agility classes do.</p>
+
+        <h4>What if my dog already knows agility commands?</h4>
+        <p class="answer">If you're dog already knows agility then you can schedule a 
+            meeting with us where we will evaluate where your dog is at and place you in the correct class.</p>
+            
+            <h4>Is there a place to potty my dog?</h4>
+            <p class="answer">We have plenty of space outside to walk and potty your dog and 
+                recommend you come early to do so as there is a $5 fee if your dog goes potty in the building.</p>
+     </div> 
+     
+     
+{% endblock %}
+</body>
+</html>
